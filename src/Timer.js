@@ -1,13 +1,14 @@
+
+
 import React from 'react';
 import TimerActionButton from './TimerActionButton';
-import helpers from './helpers';
 
+// import helpers from './helpers';
 class Timer extends React.Component {
   componentDidMount() {
     this.forceUpdateInterval = setInterval(() => this.forceUpdate(), 50);
   }
 
-  // Inside Timer
   componentWillUnmount() {
     clearInterval(this.forceUpdateInterval);
   }
@@ -19,14 +20,13 @@ class Timer extends React.Component {
   handleStopClick = () => {
     this.props.onStopClick(this.props.id);
   };
-  // ...
 
   handleTrashClick = () => {
     this.props.onTrashClick(this.props.id);
   };
 
   render() {
-    const elapsedString = window.helpers.renderElapsedString(
+    const elapsedString = helpers.renderElapsedString(
       this.props.elapsed, this.props.runningSince
     );
     return (
@@ -58,7 +58,6 @@ class Timer extends React.Component {
             </span>
           </div>
         </div>
-        {/* At the bottom of `Timer.render()`` */}
         <TimerActionButton
           timerIsRunning={!!this.props.runningSince}
           onStartClick={this.handleStartClick}
@@ -68,5 +67,6 @@ class Timer extends React.Component {
     );
   }
 }
+
 
 export default Timer;

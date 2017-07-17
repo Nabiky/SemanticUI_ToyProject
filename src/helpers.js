@@ -1,3 +1,6 @@
+import uuid from 'uuid';
+
+// import helpers from './helpers';
 
 window.helpers = (function () {
   function newTimer(attrs = {}) {

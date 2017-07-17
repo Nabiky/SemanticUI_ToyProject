@@ -1,10 +1,8 @@
-/*
-  eslint-disable react/prefer-stateless-function, react/jsx-boolean-value,
-  no-undef, jsx-a11y/label-has-for
-*/
+
 import React from 'react';
 import TimerForm from './TimerForm';
 import Timer from './Timer';
+
 class EditableTimer extends React.Component {
   state = {
     editFormOpen: false,
@@ -42,7 +40,6 @@ class EditableTimer extends React.Component {
           onFormClose={this.handleFormClose}
         />
       );
-      // Inside EditableTimer
     } else {
       return (
         <Timer
@@ -60,5 +57,4 @@ class EditableTimer extends React.Component {
     }
   }
 }
-
 export default EditableTimer;
